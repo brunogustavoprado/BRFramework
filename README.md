@@ -1,7 +1,10 @@
 # BR Framework
 ## _O Framework de PHP Brasileiro_
+#
+<img src="php-logo-bigger.png">
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](#)
+#
+
 
 BR Framework é compativel com,
 PHP,JavaScript,Html,Css.
