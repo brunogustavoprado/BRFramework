@@ -1,5 +1,5 @@
 <?php
-require_once 'framework-br/BR_Framework.php';
+require_once '../framework-br/BR_Framework.php';
 session_start();
 
 //br()->conexaobd();
