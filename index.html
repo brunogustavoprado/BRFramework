@@ -2,9 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação do Meu Framework</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282a36;
+            color: #f8f8f2;
+        }
+
+        a {
+            color: #bd93f9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff79c6;
+        }
+
+
+        .navbar {
+            background-color: #44475a;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .navbar a {
+            margin-right: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        .sidebar {
+            flex-basis: 25%;
+            background-color: #44475a;
+            padding: 20px;
+            border-right: 2px solid #6272a4;
+        }
+
+        .sidebar h2 {
+            color: #ff79c6;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #f8f8f2;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            color: #bd93f9;
+        }
+
+
+        .content {
+            flex-grow: 1;
+            padding: 0 20px;
+        }
+
+        .content h1 {
+            color: #ff79c6;
+        }
+
+        .content h2 {
+            color: #bd93f9;
+        }
+
+        .content p {
+            line-height: 1.5;
+        }
+
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+
+<div class="navbar">
+    <a href="#introduction">Nosso Site</a>
+    <a href="#installation">Download</a>
+    <a href="#usage">Noticias</a>
+    <a href="#examples">Novidades</a>
+</div>
+
+
+<div class="container">
+
+    <div class="sidebar fade-in">
+        <h2>Categorias</h2>
+        <ul>
+            <li><a href="#introduction">Introdução</a></li>
+            <li><a href="#installation">Instalação</a></li>
+            <li><a href="#usage">Comandos Basicos</a></li>
+            <li><a href="#examples">Comandos Avançados</a></li>
+        </ul>
+    </div>
+
+
+    <div class="content fade-in">
+        <h1 id="introduction">Introdução</h1>
+        <p>Bem-vindo à documentação do BR Framework.</p>
+        <p>O que é o BRFrame a final de contas?</p>
+        <p>É um framework totalmente de PHP onde a função principal é facilitar o uso de codigos</p>
+        <p>Ele é um framework privado onde tem direitos exclusivamente para a Brazil Arc</p>
+        <p>Desde comandos PHP simplificados onde você pode sair de codigos com mais de 50 linhas com um simples comando</p>
+        <p>Tambem incluindo arquivos completos de html ja com logicas PHP</p>
+        <p>Por exemplo: Tela de Login, Tela de Registro e muitos outros</p>
+        <p>Utilizado pelo prefixo: br()->comando</p>
+        <p>Onde o "comando" deve ser alterado pelos comandos disponibilizados pelo framework</p>
+        <p>Quais são os comandos e como utilizar?</p>
+        <p>Veja a categoria de comandos após a categoria de instalação para saber mais</p><br><br><br>
+
+        <h1 id="installation">Instalação</h1>
+        <p>Para instalar o BR Framework, siga os passos abaixo:</p>
+        <p>Primeiro tenha em sua maquina o GIT</p>
+        <p>Você pode instalar o GIT gratuitamente pelo link: <a href="https://git-scm.com/downloads">Git</a></p>
+        <p>Após a instalação execute o comando abaixo em seu diretorio do seu projeto para estar incluindo o framework</p>
+        <pre><code class="bash">git clone https://github.com/kn1zone/BRFramework.git</code></pre>
+        <p>Após isso o framework ja se encontra no seu diretorio</p>
+        <p>Para incluir as funcionalidades em suas paginas inclua o seguinte comando nas paginas .php</p>
+        <pre><code class="php">require 'framework-br/src/BR_Framework.php';</code></pre>
+        <p>Quando incluido o framework estará funcionando 100% em sua pagina</p><br><br><br>
+
+        <h1 id="usage">Comandos Basicos</h1>
+        <p>exex:</p>
+        <pre><code class="php">cd ../</code></pre>
+
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>
+<!--
+
+
+
+
+<h1 id="examples">Exemplos</h1>
+<p>Aqui estão alguns exemplos de como usar o Meu Framework:</p>
+<pre><code class="javascript">const exemplo = meuFramework.funcaoExemplo();
+console.log(exemplo);</code></pre>
