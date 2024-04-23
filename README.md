@@ -68,6 +68,17 @@ BR_Framework requer [PHP](https://php.com) 8.0+ para executar.
 - Função de vardumpsession, faz um VarDump da sessão do cliente => br()->vardumpsession();
 - Função de ip, coleta o ip da maquina => br()->ip();
 - Função de Echo Var, faz um echo de varias variaveis => br()->echovar();
+- Função de iniciar uma sessão: session_start()
+- Função de destruir uma sessão: session_destroy()
+- Função de gerar um UUID: generate_uuid()
+- Função de obter o navegador do usuário: get_user_browser()    1 
+- Função de obter o sistema operacional do usuário: get_user_os()    2
+- Função de obter a localização geográfica do usuário: get_user_location()
+- Função de obter a memória utilizada por um script: get_script_memory_usage()
+- Função de fazer logout do usuário: logout()
+- Função de validar endereços de email: validate_email($email)
+- Função de enviar emails: validate_email($email)
+
 
 
 
@@ -77,20 +88,11 @@ BR_Framework requer [PHP](https://php.com) 8.0+ para executar.
 - Função para inserir dados no banco de dados: db_insert($table, $data)
 - Função de atualizar dados no banco de dados: db_update($table, $data, $condition)
 - Função de Função para excluir dados do banco de dados: db_delete($table, $condition)
-- Função de iniciar uma sessão: session_start()
 - Função de definir valores na sessão: session_set($key, $value)
 - Função de obter valores da sessão: session_get($key)
-- Função de destruir uma sessão: session_destroy()
 - Função de redirecionar o usuário para outra página: redirect($url)
-- Função de fazer logout do usuário: logout()
 - Função de  criptografar senhas: encrypt_password($password)
 - Função de verificar se duas senhas correspondem: verify_password($password, $hash
-- Função de validar endereços de email: validate_email($email)
-- Função de gerar um UUID: generate_uuid()
-- Função de obter a localização geográfica do usuário: get_user_location()
-- Função de obter o navegador do usuário: get_user_browser()
-- Função de obter o sistema operacional do usuário: get_user_os()
-- Função de obter a memória utilizada por um script: get_script_memory_usage()
 - Função de validar se uma variável está vazia: is_empty($variable)
 - Função de criar um sistema de cache de página: page_cache($key, $content, $expiration_time)
 - Função de verificar se uma requisição é AJAX: is_ajax_request()

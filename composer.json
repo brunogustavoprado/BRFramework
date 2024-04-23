@@ -1,0 +1,7 @@
+{
+    "require": {
+        "ramsey/uuid": "^4.7",
+        "egulias/email-validator": "^4.0",
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
