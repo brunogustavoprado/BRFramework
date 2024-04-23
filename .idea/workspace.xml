@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b8070a8-fb8e-473e-bd3c-7ee237352a45" name="Changes" comment="New organization to clean code">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-br/src/BR_Framework.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework-br/src/BR_Framework.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="3b8070a8-fb8e-473e-bd3c-7ee237352a45" name="Changes" comment="New organization to clean code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -96,8 +90,8 @@
       <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17\framework-br\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17\framework-br\src\prototipos\23-04" />
       <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17" />
+      <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17\framework-br\src\prototipos\23-04" />
       <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17\framework-br" />
       <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17\framework-br\config" />
       <recent name="C:\Users\bruno.domingues\PhpstormProjects\untitled17\framework-br\src" />
@@ -130,7 +124,7 @@
       <workItem from="1713874415913" duration="1143000" />
       <workItem from="1713876168792" duration="5954000" />
       <workItem from="1713883436748" duration="6777000" />
-      <workItem from="1713896469158" duration="1433000" />
+      <workItem from="1713896469158" duration="2506000" />
     </task>
     <task id="LOCAL-00001" summary="New organization to clean code">
       <option name="closed" value="true" />

@@ -33,16 +33,13 @@ consiguira desenvolver 1 pagina com poucas linhas.
 
 ## Documentação
 
-BR_Framework requer [PHP](https://php.com) 8.0+ para executar.
+Framework requer [PHP](https://php.com) 8.0+ para executar (RECOMENDADO 8.3)
 
 
+[Documentação Da Versão 1.1.1](https://php.com)
 
 
-[Documentação Da Versão 1.0.0](https://php.com)
-
-[Documentação Da Versão 1.0.5](https://php.com)
-
-[Documentação Da Versão 1.2.2](https://php.com)
+[Documentação Da Versão 2.2.2](https://php.com)
 
 # Notes Admin
 ## _Notes Very Important_
