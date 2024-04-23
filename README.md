@@ -1,7 +1,7 @@
 # BR Framework
 ## _O Framework de PHP Brasileiro_
 #
-<img src="img/php-logo-bigger.png">
+<img src="https://www.php.net//images/logos/php-logo.svg">
 
 #
 
