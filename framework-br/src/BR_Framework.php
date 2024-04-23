@@ -1,20 +1,20 @@
 <?php
-require_once '../vendor/autoload.php';
+include 'framework-br/src/vendor/autoload.php';
 use Ramsey\Uuid\Uuid;
 use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Validation\RFCValidation;
 //use Symfony\Component\Mailer\Mailer;
 //use Symfony\Component\Mailer\Transport;
 //use Symfony\Component\Mime\Email;
-include "Config_Framework_DataBase.php";
-include "Config_Framework_Geral.php";
+include "framework-br/config/Config_Framework_DataBase.php";
+include "framework-br/config/Config_Framework_Geral.php";
 
 class BR_Framework {
     private static $instance;
     private $config;
 
     private function __construct() {
-        $this->config = include "Config_Framework_DataBase.php";
+        $this->config = include "framework-br/config/Config_Framework_Geral.php";
     }
 
     public static function getInstance() {
@@ -125,20 +125,13 @@ class BR_Framework {
     }
 public function sendemail()
 {
-    // Configurações do servidor SMTP
     $transport = Transport::fromDsn('smtps://suporte@futurize.shop:brgust123@@smtp.titan.email');
-
-    // Crie o objeto mailer usando o transporte SMTP
     $mailer = new Mailer($transport);
-
-    // Crie uma mensagem de e-mail
     $email = (new Email())
         ->from('suporte@futurize.shop')
         ->to('brgustavo648@gmail.com')
         ->subject('Assunto do E-mail')
         ->text('Corpo do E-mail');
-
-    // Envie a mensagem
     try {
         $mailer->send($email);
         echo 'E-mail enviado com sucesso!';
@@ -146,7 +139,114 @@ public function sendemail()
         echo 'Erro ao enviar e-mail: ' . $e->getMessage();
     }
   }
+    public function redirect($url) {
+        if (!headers_sent()) {
+            header("Location: $url");
+        } else {
+            echo "<script>window.location.href='$url';</script>";
+            exit;
+        }
+    }
+    public function encryptpass($password) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        echo $hashed_password;
+    }
 
+    public function verifypass($password, $hash) {
+        if (password_verify($password, $hash)) {
+            echo "São iguais";
+        } else {
+            return false;
+        }
+    }
+    public function searchdb($value) {
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST[$value])) {
+
+            $host = "$hostname";
+            $dbname = "$nomedb";
+            $usuario = "$username";
+            $senha = "$senhauser";
+
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $senha);
+
+            $sql = "SELECT * FROM sua_tabela WHERE coluna = :value";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':value', $_POST[$value]);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return null;
+    }
+    public function validatevar($var){
+        if ($var <= 0){
+            echo "Variavel Vazia";
+        }else{
+            echo "Variavel tem conteudo";
+        }
+    }
+    public function is_https() {
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            echo "Is HTTPS";
+            return true;
+        } elseif (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'on') {
+            echo "Is HTTPS";
+            return false;
+        } elseif (strpos($_SERVER['HTTP_HOST'], 'https://') === 0) {
+            echo "Is HTTPS";
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function is_http() {
+        if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+            echo "Is HTTP";
+            return true;
+        } elseif (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            return false;
+        } elseif (strpos($_SERVER['HTTP_HOST'], 'http://') === 0) {
+            echo "Is HTTP";
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function prepare_sql_noinject($sql, $params = []) {
+
+        $host = "$hostname";
+        $dbname = "$nomedb";
+        $usuario = "$username";
+        $senha = "$senhauser";
+
+
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $senha);
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt;
+    }
+    private $cache_directory = '/cache';
+
+    public function page_cache($key, $content, $expiration_time) {
+
+        $cache_file = $this->cache_directory . '/' . md5($key) . '.cache';
+
+
+        if (file_exists($cache_file) && time() - filemtime($cache_file) < $expiration_time) {
+
+            return file_get_contents($cache_file);
+        }
+
+
+        file_put_contents($cache_file, $content);
+
+
+        return $content;
+    }
 }
 
 
