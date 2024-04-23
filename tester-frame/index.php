@@ -1,6 +1,5 @@
 <?php
-require_once '../framework-br/BR_Framework.php';
-
+require '../framework-br/BR_Framework.php';
 
 //br()->sessionstart();
 //br()->conexaobd();
@@ -19,6 +18,9 @@ require_once '../framework-br/BR_Framework.php';
 //br()->logout();
 ?> <br><br> <?php
 //br()->validateemail();
-br()->sendemail();
+//br()->sendemail();
+
+
+
 ?>
 

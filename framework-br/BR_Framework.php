@@ -1,12 +1,13 @@
 <?php
-include "Config_Framework_DataBase.php";
-include "Config_Framework_Geral.php";
 require_once '../vendor/autoload.php';
 use Ramsey\Uuid\Uuid;
 use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Validation\RFCValidation;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+//use Symfony\Component\Mailer\Mailer;
+//use Symfony\Component\Mailer\Transport;
+//use Symfony\Component\Mime\Email;
+include "Config_Framework_DataBase.php";
+include "Config_Framework_Geral.php";
 
 class BR_Framework {
     private static $instance;
@@ -122,33 +123,30 @@ class BR_Framework {
             echo 'O endereço de e-mail é inválido.';
         }
     }
-    public function sendemail(){
-        $mail = new PHPMailer(true);
+public function sendemail()
+{
+    // Configurações do servidor SMTP
+    $transport = Transport::fromDsn('smtps://suporte@futurize.shop:brgust123@@smtp.titan.email');
 
-        try {
-            $mail->isSMTP();
-            $mail->Host = 'smtp.titan.email'; // Endereço do servidor SMTP
-            $mail->SMTPAuth = true;
-            $mail->Username = 'suporte@brazilarc.com.br'; // Seu endereço de e-mail
-            $mail->Password = 'brgust123'; // Sua senha de e-mail
-            $mail->SMTPSecure = 'SSL/TLS';
-            $mail->Port = 465;
+    // Crie o objeto mailer usando o transporte SMTP
+    $mailer = new Mailer($transport);
 
+    // Crie uma mensagem de e-mail
+    $email = (new Email())
+        ->from('suporte@futurize.shop')
+        ->to('brgustavo648@gmail.com')
+        ->subject('Assunto do E-mail')
+        ->text('Corpo do E-mail');
 
-            $mail->setFrom('suporte@brazilarc.com.br', 'Brazil Arc');
-            $mail->addAddress('brgustavo648@gmail.com', 'Nome do Destinatário');
-
-
-            $mail->Subject = 'Assunto do E-mail';
-            $mail->Body = 'Corpo do E-mail';
-
-
-            $mail->send();
-            echo 'E-mail enviado com sucesso!';
-        } catch (Exception $e) {
-            echo 'Erro ao enviar e-mail: ' . $mail->ErrorInfo;
-        }
+    // Envie a mensagem
+    try {
+        $mailer->send($email);
+        echo 'E-mail enviado com sucesso!';
+    } catch (\Exception $e) {
+        echo 'Erro ao enviar e-mail: ' . $e->getMessage();
     }
+  }
+
 }
 
 

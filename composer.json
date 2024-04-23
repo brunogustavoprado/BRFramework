@@ -2,6 +2,11 @@
     "require": {
         "ramsey/uuid": "^4.7",
         "egulias/email-validator": "^4.0",
-        "phpmailer/phpmailer": "^6.9"
+        "tracy/tracy": "^2.10"
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
     }
 }
