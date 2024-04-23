@@ -85,17 +85,15 @@ BR_Framework requer [PHP](https://php.com) 8.0+ para executar.
 - Função para obter resultados de uma consulta SQL: db_fetch($result)
 - Função de validar se uma variável está vazia: is_empty($variable)
 - Função de verificar se uma requisição é HTTPS: is_https_request()
+- Função de criar um sistema de cache de página: page_cache($key, $content, $expiration_time)
+- Função de verificar se uma requisição é AJAX: is_ajax_request()
+- Função de Função para excluir dados do banco de dados: db_delete($table, $condition)
+- Função de proteger cookies com HTTPOnly e Secure: secure_cookie($name, $value, $expiry)
+- Função para inserir dados no banco de dados: db_insert($table, $data)
+- Função de atualizar dados no banco de dados: db_update($table, $data, $condition)
+- Função de escapar HTML, evitando ataques XSS: escape_html($string)
 
 
 # FUNCTIONS ADD IN THE FUTURE
 
-- Função para inserir dados no banco de dados: db_insert($table, $data)
-- Função de atualizar dados no banco de dados: db_update($table, $data, $condition)
-- Função de Função para excluir dados do banco de dados: db_delete($table, $condition)
-- Função de criar um sistema de cache de página: page_cache($key, $content, $expiration_time)
-- Função de verificar se uma requisição é AJAX: is_ajax_request()
-- Função de escapar HTML, evitando ataques XSS: escape_html($string)
-- Função de filtrar inputs de formulários para evitar ataques XSS: filter_input($input
-- Função de proteger cookies com HTTPOnly e Secure: secure_cookie($name, $value, $expiry)
-- Função de proteger contra ataques de força bruta com bloqueio de IP após várias tentativas fracassadas: block_ip_after_failed_attempts($ip, $max_attempts, $block_duration)
 

@@ -247,6 +247,137 @@ public function sendemail()
 
         return $content;
     }
+    public function is_ajax() {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+    }
+    public function db_delete($table, $condition) {
+
+        if (empty($table) || empty($condition)) {
+            throw new InvalidArgumentException("Tabela e condição são obrigatórias.");
+        }
+
+
+        $host = "$hostname";
+        $dbname = "$nomedb";
+        $usuario = "$username";
+        $senha = "$senhauser";
+
+
+        $sql = "DELETE FROM $table WHERE $condition";
+
+        try {
+            // Conecta ao banco de dados
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $senha);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Prepara e executa a consulta SQL
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+
+
+            return $stmt->rowCount();
+        } catch (PDOException $e) {
+
+            echo "Erro ao excluir dados: " . $e->getMessage();
+            return false;
+        }
+    }
+    public function secure_cookie($name, $value, $expiry) {
+
+        $http_only = true;
+
+
+        $secure = true;
+
+
+        $path = '/';
+
+
+        $domain = null;
+
+
+        $same_site = 'Lax';
+
+
+        setcookie($name, $value, $expiry, $path, $domain, $secure, $http_only);
+    }
+    public function db_insert($table, $data) {
+
+        if (empty($table) || empty($data) || !is_array($data)) {
+            throw new InvalidArgumentException("Tabela e dados são obrigatórios.");
+        }
+
+
+        $host = "$hostname";
+        $dbname = "$nomedb";
+        $usuario = "$username";
+        $senha = "$senhauser";
+
+
+        $columns = implode(', ', array_keys($data));
+        $placeholders = ':' . implode(', :', array_keys($data));
+        $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
+
+        try {
+
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $senha);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute($data);
+
+
+            return $pdo->lastInsertId();
+        } catch (PDOException $e) {
+
+            echo "Erro ao inserir dados: " . $e->getMessage();
+            return false;
+        }
+    }
+    public function db_update($table, $data, $condition) {
+
+        if (empty($table) || empty($data) || !is_array($data) || empty($condition)) {
+            throw new InvalidArgumentException("Tabela, dados e condição são obrigatórios.");
+        }
+
+
+        $host = "$hostname";
+        $dbname = "$nomedb";
+        $usuario = "$username";
+        $senha = "$senhauser";
+
+
+        $update_data = '';
+        foreach ($data as $key => $value) {
+            $update_data .= "$key = :$key, ";
+        }
+        $update_data = rtrim($update_data, ', ');
+
+
+        $sql = "UPDATE $table SET $update_data WHERE $condition";
+
+        try {
+
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $senha);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute($data);
+
+
+            return $stmt->rowCount();
+        } catch (PDOException $e) {
+
+            echo "Erro ao atualizar dados: " . $e->getMessage();
+            return false;
+        }
+    }
+    public function escape_html($string) {
+
+        return htmlspecialchars($string, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
 }
 
 
