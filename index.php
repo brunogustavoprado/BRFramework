@@ -1,5 +1,5 @@
 <?php
-require 'src/BR_Framework.php';
+require 'framework-br/src/BR_Framework.php';
 
 //br()->sessionstart();
 

@@ -1,5 +1,5 @@
 <?php
-include '../vendor/autoload.php';
+include 'framework-br/src/vendor/autoload.php';
 ##########DEBUGGER############
 /*CASO NÃO USE REMOVA ESSA BARRA =>  */
 use Tracy\Debugger;
