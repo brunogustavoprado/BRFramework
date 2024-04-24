@@ -5,35 +5,35 @@ include 'framework-br/src/BR_Framework.php';
 
 //br()->conexaobd();
 
-//br()->authuser();
+//br()->authuser(); /
 
 //br()->vardumpsession();
 
 //br()->ip();
 
-//br()->uid();
+//br()->uid(); /
 
 //br()->browser();
 
 //br()->location();
 
-//br()->memory();
+//br()->memory(); /
 
 //br()->sessionkill();
 
 //br()->logout();
 
-//br()->validateemail();
+//br()->validateemail(); /
 
-//br()->sendemail();
+//br()->sendemail(); /
 
-//br()->redirect("www.google.com");
+//br()->redirect("https://www.google.com");
 
-//br()->encryptpass(1234);
+//br()->encryptpass("abaco"); /
 
-//br()->verifypass(1234, "$2y$10\$EDKxo2gPwTfrCxSddTKnbHBu.YIC8T/u5.jnQBYObXUCqVUlgJYLeym")
+//br()->verifypass("abaco", "$2y$10\$PB0vFMOWS/jWGhXu0PA1YepuV/ywYWeF3V//ZyHK6mwhh4ZynNtY2") /
 
-//br()->searchdb("valor");
+//br()->searchdb("valor"); /
 
 //br()->validatevar($valor);
 
@@ -41,17 +41,17 @@ include 'framework-br/src/BR_Framework.php';
 
 //br()->is_http();
 
-//br()->prepare_sql_noinject("value")
+//br()->prepare_sql_noinject("value")  /
 
-//br()->is_ajax()
+//br()->is_ajax()  /
 
-//br()->db_delete("tabela", "elemento")
+//br()->db_delete("tabela", "elemento") /
 
-//br()->db_insert("tabela", "dados")
+//br()->db_insert("tabela", "dados")  /
 
-//br()->db_update("tabela", "dados", "condição")
+//br()->db_update("tabela", "dados", "condição")  /
 
-//$teste = br()->escape_html("string");
+//$teste = br()->escape_html("string");  /
 //echo $teste;
 
 
@@ -63,10 +63,11 @@ include 'framework-br/src/BR_Framework.php';
 ####################################################################################################################
 
 
+
 ####################################################################################################################
 //$chave = 'pagina_principal';
 //$conteudo = '<html><head><title>Página Principal</title></head><body><h1>Conteúdo da Página</h1></body></html>';
-//$tempo_expiracao = 1;
+//$tempo_expiracao = 10000;
 //br()->page_cache($chave, $conteudo, $tempo_expiracao);
 ####################################################################################################################
 

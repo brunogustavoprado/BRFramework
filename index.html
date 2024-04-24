@@ -55,17 +55,24 @@
             color: #ff79c6;
             text-align: center;
             margin-bottom: 30px;
+            font-size: 30px;
+            position: fixed;
+            margin-left: 150px;
         }
+
+
 
         .sidebar ul {
             list-style-type: none;
             padding: 0;
             text-align: center;
-
+            position: fixed;
+            margin-left: 120px;
         }
 
         .sidebar li {
             margin-bottom: 20px;
+            font-size: 20px;
         }
 
         .sidebar a {
@@ -108,6 +115,15 @@
                 opacity: 1;
             }
         }
+        .php{
+            color: #2fda22;
+        }
+        .sub-content{
+            font-size: 13px;
+            margin-bottom: 0;
+            display: block;
+            color: #676767;
+        }
     </style>
 </head>
 <body>
@@ -123,11 +139,24 @@
 <div class="container">
 
     <div class="sidebar fade-in">
-        <h2>Categorias</h2>
+        <h2>Categorias</h2><br><br><br><br>
         <ul>
             <li><a href="#introduction">Introdução</a></li>
             <li><a href="#installation">Instalação</a></li>
             <li><a href="#usage">Comandos Basicos</a></li>
+            <a class="sub-content" href="#condb">1- Conexão Banco de Dados</a>
+            <a class="sub-content" href="#sessionstart">2- Iniciar Sessão</a>
+            <a class="sub-content" href="#vardump">3- VarDump da Sessão</a>
+            <a class="sub-content" href="#ip">4- Coletar IP Cliente</a>
+            <a class="sub-content" href="#navega">5- Coletar Navegador</a>
+            <a class="sub-content" href="#localizacao">6- Coletar Localização</a>
+            <a class="sub-content" href="#sessionkill">7- Acabar com a Session</a>
+            <a class="sub-content" href="#logout">8- Logout</a>
+            <a class="sub-content" href="#redirect">9- Redirecionar</a>
+            <a class="sub-content" href="#varempty">10- Validar a Variavel</a>
+            <a class="sub-content" href="#https">11- Alocado em HTTPS</a>
+            <a class="sub-content" href="#http">12- Alocado em HTTP</a>
+            <br><br>
             <li><a href="#examples">Comandos Avançados</a></li>
         </ul>
     </div>
@@ -159,8 +188,74 @@
         <p>Quando incluido o framework estará funcionando 100% em sua pagina</p><br><br><br>
 
         <h1 id="usage">Comandos Basicos</h1>
-        <p>exex:</p>
-        <pre><code class="php">cd ../</code></pre>
+
+        <p id="condb">Função de conexão com banco de dados:</p>
+        <pre><code class="php">br()->conexaobd();</code></pre>
+        <p>Cria uma conexão com banco de dados que pode ser configurado na pasta config</p>
+        <hr>
+
+        <p id="sessionstart">Função de iniciar sessão:</p>
+        <pre><code class="php">br()->sessionstart();</code></pre>
+        <p>Cria uma sessão para o cliente que estiver utilizando o sistema</p>
+        <hr>
+
+        <p id="vardump">Função de VarDump da sessão:</p>
+        <pre><code class="php">br()->vardumpsession();</code></pre>
+        <p>Cria um vardump direto para a sessão aberta</p>
+        <hr>
+
+        <p id="ip">Função de coletar ip cliente:</p>
+        <pre><code class="php">br()->ip();</code></pre>
+        <p>Coleta e exibe o ip do cliente</p>
+        <hr>
+
+        <p id="navega">Função de coletar navegador do cliente:</p>
+        <pre><code class="php">br()->browser();</code></pre>
+        <p>Coleta e exibe o navegador do cliente</p>
+        <hr>
+
+        <p id="localizacao">Função de coletar localização do cliente:</p>
+        <pre><code class="php">br()->location();</code></pre>
+        <p>Coleta e exibe a localização do cliente</p>
+        <hr>
+
+        <p id="sessionkill">Função de acabar com a session do cliente:</p>
+        <pre><code class="php">br()->sessionkill();</code></pre>
+        <p>Coleta a session e destroi ela por completo</p>
+        <hr>
+
+        <p id="logout">Função de logout:</p>
+        <pre><code class="php">br()->logout();</code></pre>
+        <p>Faz o logout completo destruindo todos os vestigios</p>
+        <hr>
+
+        <p id="redirect">Função de redirecionar para url:</p>
+        <pre><code class="php">br()->redirect("https://www.exemplo.com");</code></pre>
+        <p>Faz o redirecionamento do cliente para o url definido</p>
+        <hr>
+
+        <p id="varempty">Função de validar se a variavel está vazia ou preenchida:</p>
+        <pre><code class="php">br()->validatevar($valor);</code></pre>
+        <p>Faz a validação se a variavel está vazia ou preenchida</p>
+        <hr>
+
+        <p id="https">Função de verificar se o site esta alocado em HTTPS:</p>
+        <pre><code class="php">br()->is_https();</code></pre>
+        <p>Faz a verificação se o site esta alocado em HTTPS</p>
+        <hr>
+
+        <p id="http">Função de verificar se o site esta alocado em HTTP:</p>
+        <pre><code class="php">br()->is_http();</code></pre>
+        <p>Faz a verificação se o site esta alocado em HTTP</p><br><br><br>
+
+        <h1 id="examples">Comandos Avançados</h1>
+
+
+        <p>Função de verificar se o site esta alocado em HTTPS:</p>
+        <pre><code class="php">br()->is_https();</code></pre>
+        <p>Faz a verificação se o site esta alocado em HTTPS</p>
+        <hr>
+
 
     </div>
 </div>
@@ -175,7 +270,3 @@
 
 
 
-<h1 id="examples">Exemplos</h1>
-<p>Aqui estão alguns exemplos de como usar o Meu Framework:</p>
-<pre><code class="javascript">const exemplo = meuFramework.funcaoExemplo();
-console.log(exemplo);</code></pre>
