@@ -251,11 +251,75 @@
         <h1 id="examples">Comandos Avançados</h1>
 
 
-        <p>Função de verificar se o site esta alocado em HTTPS:</p>
-        <pre><code class="php">br()->is_https();</code></pre>
-        <p>Faz a verificação se o site esta alocado em HTTPS</p>
+        <p>Função de autenticar usario:</p>
+        <pre><code class="php">br()->authuser();</code></pre>
+        <p>Faz a verificação se o user fez o login normalmente</p>
         <hr>
 
+        <p>Função de gerar um UIA:</p>
+        <pre><code class="php">br()->uid();</code></pre>
+        <p>Faz a geração de um UID</p>
+        <hr>
+
+        <p>Função de verificar o quanto de memoria o script consome:</p>
+        <pre><code class="php">br()->memory();</code></pre>
+        <p>Faz a verificação o quanto de memoria o script consome</p>
+        <hr>
+
+        <p>Função de validar o email se é valido:</p>
+        <pre><code class="php">br()->validateemail();</code></pre>
+        <p>Faz a validação do email se é valido</p>
+        <hr>
+
+        <p>Função de gerar um codigo criptografado de uma senha:</p>
+        <pre><code class="php">br()->encryptpass("teste");</code></pre>
+        <p>Faz o retorno de um codigo criptografado de uma senha</p>
+        <hr>
+
+        <p>Função de verificar se a senha bate com o codigo criptografado:</p>
+        <pre><code class="php">br()->verifypass("teste", "$2y$10\$PB0vFMOWS/jWGhXu0PA1YepuV/ywYWeF3V//ZyHK6mwhh4ZynNtY2")</code></pre>
+        <p>Faz a verificação se a senha bate com o codigo criptografado</p>
+        <hr>
+
+        <p>Função de pesquisar dados na DB:</p>
+        <pre><code class="php">br()->searchdb("valor");</code></pre>
+        <p>Faz uma pesquisa na DB</p>
+        <hr>
+
+        <p>Função de criar conexão com SQL com 100% de segurança:</p>
+        <pre><code class="php">br()->prepare_sql_noinject("value")</code></pre>
+        <p>Faz a conexão mais segura o possivel</p>
+        <hr>
+
+        <p>Função de deletar um elemento de uma tabela:</p>
+        <pre><code class="php">br()->db_delete("tabela", "elemento")</code></pre>
+        <p>Faz um delete um elemento de uma tabela</p>
+        <hr>
+
+        <p>Função de inserir um elemento de uma tabela:</p>
+        <pre><code class="php">br()->db_insert("tabela", "dados")</code></pre>
+        <p>Faz um inserir um elemento de uma tabela</p>
+        <hr>
+
+        <p>Função de update um elemento de uma tabela:</p>
+        <pre><code class="php">br()->db_update("tabela", "dados", "condição")</code></pre>
+        <p>Faz um update um elemento de uma tabela</p>
+        <hr>
+
+        <p>Função de escapar um elemento html:</p>
+        <pre><code class="php">br()->escape_html("string");</code></pre>
+        <p>Faz um escape de um elemento html</p>
+        <hr>
+
+        <p>Função de criar um cookie por tempo limitado:</p>
+        <pre><code class="php">br()->secure_cookie("$nome_cookie", "$valor_cookie", "$tempo_expiracao");</code></pre>
+        <p>Faz um cookie por tempo limitado</p>
+        <hr>
+
+        <p>Função de criar um cache por tempo limitado:</p>
+        <pre><code class="php">br()->page_cache($chave, $conteudo, $tempo_expiracao);</code></pre>
+        <p>Faz um cache que fica armazenado na pasta do seu servidor para ser reutilizado</p>
+        <hr>
 
     </div>
 </div>

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b8070a8-fb8e-473e-bd3c-7ee237352a45" name="Changes" comment="New organization to clean code" />
+    <list default="true" id="3b8070a8-fb8e-473e-bd3c-7ee237352a45" name="Changes" comment="New organization to clean code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +128,9 @@
       <workItem from="1713874415913" duration="1143000" />
       <workItem from="1713876168792" duration="5954000" />
       <workItem from="1713883436748" duration="6777000" />
-      <workItem from="1713896469158" duration="7399000" />
+      <workItem from="1713896469158" duration="7411000" />
+      <workItem from="1713957180841" duration="404000" />
+      <workItem from="1713960806780" duration="759000" />
     </task>
     <task id="LOCAL-00001" summary="New organization to clean code">
       <option name="closed" value="true" />
